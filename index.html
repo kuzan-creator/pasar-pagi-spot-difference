@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pasar Pagi — Cari Bedanya!</title>
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<header class="top">
+  <div>
+    <h1>Pasar Pagi — Cari Bedanya!</h1>
+    <p class="tagline">Dua gambar hampir sama. Temukan semua perbedaannya sebelum waktu habis.</p>
+  </div>
+  <div class="hud">
+    <span id="timer" class="pill timer">2:00</span>
+    <span id="counter" class="pill counter">Sisa: 7</span>
+    <span id="score" class="pill">Skor: 0</span>
+    <span id="hints" class="pill">Petunjuk: 3 (H)</span>
+  </div>
+</header>
+
+<nav class="levels" aria-label="Pilih level">
+  <button class="level-tab active" type="button">1 · Lapak Buah</button>
+  <button class="level-tab" type="button">2 · Warung Kopi</button>
+  <button class="level-tab" type="button">3 · Taman Bermain</button>
+  <span id="level-name" class="level-name">Level 1 — Lapak Buah</span>
+  <span id="level-sub" class="level-sub">Pasar pagi — lapak buah Bu Lastri</span>
+</nav>
+
+<main class="board">
+  <figure class="panel-wrap">
+    <figcaption>Gambar A — Kiri</figcaption>
+    <canvas id="panel-a" class="panel" width="600" height="400" aria-label="Gambar kiri: lapak pasar pagi"></canvas>
+  </figure>
+  <div class="versus" aria-hidden="true">VS</div>
+  <figure class="panel-wrap">
+    <figcaption>Gambar B — Kanan</figcaption>
+    <canvas id="panel-b" class="panel" width="600" height="400" aria-label="Gambar kanan: lapak pasar pagi dengan perbedaan"></canvas>
+  </figure>
+</main>
+
+<section class="status">
+  <p id="message" role="status">Klik perbedaan di gambar kiri atau kanan — panah + Enter juga bisa.</p>
+  <p id="progress" class="progress" aria-label="Kemajuan level">○ ○ ○ ○ ○ ○ ○</p>
+</section>
+
+<footer class="controls">
+  <button id="hint-btn" type="button">Petunjuk (H)</button>
+  <button id="restart-btn" type="button">Ulang Level (R)</button>
+  <button id="mute-btn" type="button">Suara: Hidup (M)</button>
+  <p class="help">Mouse: klik perbedaan &nbsp;·&nbsp; Keyboard: panah gerakkan bidikan, Enter periksa, H petunjuk, R ulang, N level berikut, 1/2/3 ganti level &nbsp;·&nbsp; Klik salah minus 5 detik.</p>
+</footer>
+
+<p id="sr-status" class="sr-only" role="status" aria-live="polite"></p>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
